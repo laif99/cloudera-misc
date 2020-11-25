@@ -25,12 +25,14 @@ sed -i 's/SELINUX=.*/SELINUX=disabled/' /etc/selinux/config
 
 if [ "`ulimit -n`" -lt "65536" ]; then
   echo "-- Set open files : 1048576"
+  ulimit -n 1048576
   echo "* hard nofile 1048576" >> /etc/security/limits.conf
   echo "* soft nofile 1048576" >> /etc/security/limits.conf
 fi
 
 if [ "`ulimit -u`" -lt "65536" ]; then
   echo "-- Set max user processes : 65536"
+  ulimit -u 65536
   echo "* hard nproc 65536" >> /etc/security/limits.conf
   echo "* soft nproc 65536" >> /etc/security/limits.conf
 fi
