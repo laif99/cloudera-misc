@@ -30,3 +30,5 @@ CREATE DATABASE ranger DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_c
 GRANT ALL ON ranger.* TO 'ranger'@'%' IDENTIFIED BY 'cloudera';
 flush privileges;
 EOF_QUERY
+
+/opt/cloudera/cm/schema/scm_prepare_database.sh mysql scm scm cloudera
