@@ -37,7 +37,7 @@ if [ "`ulimit -u`" -lt "65536" ]; then
   echo "* soft nproc 65536" >> /etc/security/limits.conf
 fi
 
-if [ "${NTP_SERVER_ADDRESS}" != "" ]; then
+if [ "${NTP_SERVER_ADDRESS}" != "210.98.16.100" ]; then
   echo "-- Disable chronyd"
   systemctl disable chronyd
   systemctl stop chronyd
